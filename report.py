@@ -53,8 +53,10 @@ def R(m, email, num):
 
 print()
 
-if response.status_code == 200: 
-    print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')
+if "Thanks" in req:
+  
+   
+ print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')
 else:
     print("Error Report")
 u=input(
