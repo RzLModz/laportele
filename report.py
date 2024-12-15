@@ -76,27 +76,34 @@ names = ["Rakesh","rsmesh","Aman","avishek","mohan","Neha","akhilesh","sayam.","
 
 def generate_nomor_indonesia():
     # Daftar kode area yang umum di Indonesia
-    kode_area = ["811", "812", "813", "815", "816", "817", "818", "819", "821", "822", "823", ...]  # Tambahkan kode area lainnya sesuai kebutuhan
-
-    # Pilih kode area secara acak
+    kode_area = ["811", "812", "813", "851", "821", "822", "823", "895", "896", "831", "817"]  # Tambahkan kode area lainnya sesuai kebutuhan
     kode_area_terpilih = random.choice(kode_area)
-
-    # Generate nomor telepon 8 digit secara acak
     nomor_telepon = str(random.randint(10000000, 99999999))
-
-    # Gabungkan kode area dan nomor telepon
     nomor_lengkap = f"+62{kode_area_terpilih}{nomor_telepon}"
-
     return nomor_lengkap
 
+def generate_email(name):
+    domains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com", "protonmail.com"]
+    tld = [".com", ".net", ".org"]
+    parts = names.split()
+    if len(parts) > 1:
+        first_names, last_names = parts[0], parts[-1]
+        possible_names = [first_names, last_names, first_names[0] + last_names, first_names + last_names[0]]
+        names_part = random.choice(possible_names)
+    else:
+        names_part = names
+
+    random_part = ''.join(random.choices(string.ascii_lowercase + string.digits + '_', k=random.randint(2, 4)))
+    domain = random.choice(domains)
+    tld = random.choice(tld)
+    email = f"{names_part}{random_part}@{domain}{tld}"
+    return email
+
 while True:
-    nomor = generate_nomor_indonesia()
-    email = f'{random.choice(names)}{randint(9392820,9994958)}@gmail.com'
-    # ... sisa kode Anda
-while True:
- num="+62",randint(9392823620,9994997058)
- email = f'{random.choice(names)}{randint(9392820,9994958)}@gmail.com'
- 
+    num = generate_nomor_indonesia()
+    nama = random.choice(names)
+    email = generate_email(nama)
+   
  
  R(m,email,num)
 
