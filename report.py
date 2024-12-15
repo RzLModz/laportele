@@ -15,8 +15,8 @@ from user_agent import generate_user_agent as ua
 from datetime import datetime
 from pytz import timezone
 now = datetime.now(timezone('Asia/Jakarta'))
-west_indo_day = now.strftime("%A", now)  # Full weekday name (e.g., Sunday)
-west_indo_time = now.strftime("%d %B %Y %H:%M:%S", now)  # Formatted date and time
+west_indo_day = now.strftime("%A")  # Full weekday name (e.g., Sunday)
+west_indo_time = now.strftime("%d %B %Y %H:%M:%S")
 E = '\033[1;31m'
 B = '\033[2;36m'
 G = '\033[1;32m'
