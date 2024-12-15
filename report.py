@@ -46,7 +46,6 @@ def to(s):
       f"{RED}JOIN >> {MAGENTA}T.ME/POWERPROOFOVERLOAD{RESET}")
 def R(m, email, num):
     res=requests.get('https://telegram.org/support',headers={"Host": "telegram.org","cache-control": "max-age\u003d0","sec-ch-ua": "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\"","sec-ch-ua-mobile": "?1","sec-ch-ua-platform": "\"Android\"","upgrade-insecure-requests": "1","user-agent":ua(),"accept": "text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/avif,image/webp,image/apng,*/*;q\u003d0.8,application/signed-exchange;v\u003db3;q\u003d0.7","sec-fetch-site": "cross-site","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://www.google.com/","accept-encoding": "gzip, deflate, br, zstd","accept-language": "en-XA,en;q\u003d0.9,ar-XB;q\u003d0.8,ar;q\u003d0.7,en-GB;q\u003d0.6,en-US;q\u003d0.5"}).cookies;
-})    
     stel = res.cookies.get('stel_ssid')
     data=f'message={m}&email={email}&phone={num}&setln='
     cookie_header = f"cookie: stel_ssid={stel}" if stel else None
@@ -75,8 +74,27 @@ Thank you for your attention to this matter.
 
 names = ["Rakesh","rsmesh","Aman","avishek","mohan","Neha","akhilesh","sayam.","robin","rahul","dev","meera","Anushka","akshita","manjeet","manoj","rakhi","rampal","sonu","Subhashree","Lakhan","mohit","mohini","kakoli","prince","karan","sushila","sushil","Krishna","Ankit","prakash"]
 
+def generate_nomor_indonesia():
+    # Daftar kode area yang umum di Indonesia
+    kode_area = ["811", "812", "813", "815", "816", "817", "818", "819", "821", "822", "823", ...]  # Tambahkan kode area lainnya sesuai kebutuhan
+
+    # Pilih kode area secara acak
+    kode_area_terpilih = random.choice(kode_area)
+
+    # Generate nomor telepon 8 digit secara acak
+    nomor_telepon = str(random.randint(10000000, 99999999))
+
+    # Gabungkan kode area dan nomor telepon
+    nomor_lengkap = f"+62{kode_area_terpilih}{nomor_telepon}"
+
+    return nomor_lengkap
+
 while True:
- num="+91",randint(9392823620,9994997058)
+    nomor = generate_nomor_indonesia()
+    email = f'{random.choice(names)}{randint(9392820,9994958)}@gmail.com'
+    # ... sisa kode Anda
+while True:
+ num="+62",randint(9392823620,9994997058)
  email = f'{random.choice(names)}{randint(9392820,9994958)}@gmail.com'
  
  
