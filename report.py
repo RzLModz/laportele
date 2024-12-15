@@ -53,7 +53,7 @@ def R(m, email, num):
 
 print()
 
-if "Thanks" in requests:
+if "Thanks" in res:
   
    
  print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')
