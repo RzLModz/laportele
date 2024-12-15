@@ -14,14 +14,10 @@ import requests,random,pyfiglet,webbrowser,sys,time
 from random import randint
 from user_agent import generate_user_agent as ua
 from datetime import datetime
-now = datetime.now()
-west_indo = pytz.timezone('Asia/Jakarta')
-west_indo_time = datetime.now(west_indo)
-indonesian_days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
-day_index = now.weekday()
-indonesian_day = indonesian_days[day_index]
-west_indo_day_index = west_indo_time.weekday()
-indonesian_west_indo_day = indonesian_days[west_indo_day_index]
+from pytz import timezone
+now = datetime.now(timezone('Asia/Jakarta'))
+west_indo_day = now.strftime("%A", now)  # Full weekday name (e.g., Sunday)
+west_indo_time = now.strftime("%d %B %Y %H:%M:%S", now)  # Formatted date and time
 E = '\033[1;31m'
 B = '\033[2;36m'
 G = '\033[1;32m'
@@ -47,7 +43,9 @@ def to(s):
         time.sleep(500.0 / 8000)
 
 to(
-    f"\033[31;m Date >> \033[1;36m{indonesian_west_indo_day} {west_indo_time.strftime('%d %B %Y %H:%M:%S\n\033[1;31m DEVELOPER >>\033[1;33m @OverloadServer  \n\033[31;m JOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
+    print(f"{RED}Date >> {MAGENTA}{west_indo_day} {west_indo_time}{RESET}\n"
+      f"{RED}DEVELOPER >> {YELLOW}@OverloadServer{RESET}\n"
+      f"{RED}JOIN >> {MAGENTA}T.ME/POWERPROOFOVERLOAD{RESET}")
 def R(m,email,num):
  res=requests.get('https://telegram.org/support',headers={"Host": "telegram.org","cache-control": "max-age\u003d0","sec-ch-ua": "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\"","sec-ch-ua-mobile": "?1","sec-ch-ua-platform": "\"Android\"","upgrade-insecure-requests": "1","user-agent":ua(),"accept": "text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/avif,image/webp,image/apng,*/*;q\u003d0.8,application/signed-exchange;v\u003db3;q\u003d0.7","sec-fetch-site": "cross-site","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://www.google.com/","accept-encoding": "gzip, deflate, br, zstd","accept-language": "en-XA,en;q\u003d0.9,ar-XB;q\u003d0.8,ar;q\u003d0.7,en-GB;q\u003d0.6,en-US;q\u003d0.5"}).cookies;stel=res['stel_ssid'];data=f'message={m}&email={email}&phone={num}&setln=';req=requests.post('https://telegram.org/support',data=data,headers={"Host": "telegram.org","cache-control": "max-age\u003d0","sec-ch-ua": "\"Google Chrome\";v\u003d\"119\", \"Chromium\";v\u003d\"119\", \"Not?A_Brand\";v\u003d\"24\"","sec-ch-ua-mobile": "?1","sec-ch-ua-platform": "\"Android\"","upgrade-insecure-requests": "1","origin": "https://telegram.org","content-type": "application/x-www-form-urlencoded","user-agent":ua(),"accept": "text/html,application/xhtml+xml,application/xml;q\u003d0.9,image/avif,image/webp,image/apng,*/*;q\u003d0.8,application/signed-exchange;v\u003db3;q\u003d0.7","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": "https://telegram.org/support","accept-encoding": "gzip, deflate, br, zstd","accept-language": "en-XA,en;q\u003d0.9,ar-XB;q\u003d0.8,ar;q\u003d0.7,en-GB;q\u003d0.6,en-US;q\u003d0.5","cookie":f"stel_ssid={stel}"}).text;print();#print((req.split('class="alert alert-success"><b>')[1].split('<')[0]))
  
