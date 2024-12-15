@@ -78,7 +78,6 @@ def generate_nomor_indonesia():
 def generate_email(name):
     domains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com", "protonmail.com"]
     tld = [".com", ".net", ".org"]
-    parts = names.split()
     if len(parts) > 1:
         first_names, last_names = parts[0], parts[-1]
         possible_names = [first_names, last_names, first_names[0] + last_names, first_names + last_names[0]]
