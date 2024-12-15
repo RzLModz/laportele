@@ -54,11 +54,11 @@ def R(m, email, num):
 if response.status_code == 200: 
     print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')
 else:
-  print("Error Report")
+    print("Error Report")
 except requests.exceptions.RequestException as e:
-  print(f"Error: {e}")
+    print(f"Error: {e}")
 except Exception as e:
-  print(f"An unexpected error occurred: {e}")   
+    print(f"An unexpected error occurred: {e}")   
 u=input(
 "\033[30;m[×] Enter Username of scammer : "
 )
