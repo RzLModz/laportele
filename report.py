@@ -27,7 +27,6 @@ hari_id = {
 now = datetime.now(timezone('Asia/Jakarta'))
 west_indo_day = hari_id[now.strftime("%A")]
 west_indo_time = now.strftime("%d %B %Y %H:%M:%S")
-sleep(1)
 E = '\033[1;31m'
 B = '\033[2;36m'
 G = '\033[1;32m'
@@ -46,15 +45,15 @@ Ya_Bs = '\033[1;34m'
 S_aBs = '\033[1;33m'
 ab = pyfiglet.figlet_format("TELEGRAM AUTO REPORT")
 print(a_bSa+ab)
-def to(s):
-    for char in s + "\n":
+def to(message):
+    for char in message + "\n":
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(500.0 / 8000)
 
-my_string =(f"\033[31;mDate >> \033[31;m{west_indo_day} {west_indo_time}\n\033[1;31mDEVELOPER >>\033[1;@Overloadserver  \n\033[31;mJOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
+my_string = (f"\033[31;m Date >> \033[31;m{west_indo_day} {west_indo_time}\n\033[1;31mDEVELOPER >>\033[1; @Overloadserver  \n\033[31;mJOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
 
-to(my_string)
+to(my_string)  # Pass my_string as the argument
 def R(m, email, num):
     initial_response = requests.get('https://telegram.org/support', headers={
     "Host": "telegram.org",
@@ -96,9 +95,8 @@ def R(m, email, num):
         "accept-language": "en-XA,en;q=0.9,ar-XB;q=0.8,ar;q=0.7,en-GB;q=0.6,en-US;q=0.5",
         "cookie": cookie_header,  # Add the cookie header if available
 })
-    print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')      
-
-u = input("\033[30;m[×] Enter Username of scammer : ")    
+    print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')            
+u = input("\033[30;m[×] Enter Username of scammer : ")
 
 m = """Hello sir/ma'am,
 
