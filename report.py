@@ -14,9 +14,26 @@ from random import randint
 from user_agent import generate_user_agent as ua
 from datetime import datetime
 from pytz import timezone
+from time import sleep
+hari_id = {
+    "Monday": "Senin",
+    "Tuesday": "Selasa",
+    "Wednesday": "Rabu",
+    "Thursday": "Kamis",
+    "Friday": "Jumat",
+    "Saturday": "Sabtu",
+    "Sunday": "Minggu"
+}
 now = datetime.now(timezone('Asia/Jakarta'))
-west_indo_day = now.strftime("%A")  # Full weekday name (e.g., Sunday)
+west_indo_day = hari_id[now.strftime("%A")]
 west_indo_time = now.strftime("%d %B %Y %H:%M:%S")
+def get_real_time_string():
+    while True:
+        now = datetime.now(timezone('Asia/Jakarta'))
+        west_indo_day = hari_id[now.strftime("%A")]
+        west_indo_time = now.strftime("%d %B %Y %H:%M:%S")
+        yield f"\033[31;mTanggal >> \033[31;m{west_indo_day} {west_indo_time}\n"
+        sleep(1)
 E = '\033[1;31m'
 B = '\033[2;36m'
 G = '\033[1;32m'
@@ -35,13 +52,15 @@ Ya_Bs = '\033[1;34m'
 S_aBs = '\033[1;33m'
 ab = pyfiglet.figlet_format("TELEGRAM AUTO REPORT")
 print(a_bSa+ab)
+for message in get_real_time_string():
+    to(message)
 def to(s):
     for char in s + "\n":
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(500.0 / 8000)
 
-my_string =(f"\033[31;mDate >> \033[31;m{west_indo_day} {west_indo_time}\n\033[1;31mDEVELOPER >>\033[1;33m @Overloadserver  \n\033[31;mJOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
+my_string =(f"\033[31;mDate >> \033[31;m{west_indo_day} {west_indo_time}\n\033[1;31mDEVELOPER >>\033[1;@Overloadserver  \n\033[31;mJOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
 
 to(my_string)
 def R(m, email, num):
@@ -86,8 +105,8 @@ def R(m, email, num):
         "cookie": cookie_header,  # Add the cookie header if available
 })
     print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')      
-    
-u = input("\033[30;m[×] Enter Username of scammer : ")
+
+u = input("\033[30;m[×] Enter Username of scammer : ")    
 
 m = """Hello sir/ma'am,
 
