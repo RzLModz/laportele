@@ -87,9 +87,8 @@ def R(m, email, num):
 })
     print(f'{G}[√]REPORT{E}==>{B} SUCCESS {E}| {G}{E}{B} {G}FROM{E}==> \033[35;m{email}{B} \nTHIS TOOL IS MADE BY @OverloadServer\n')      
     
-u=input(
-"\033[30;m[×] Enter Username of scammer : "
-)
+u = input("\033[30;m[×] Enter Username of scammer : ")
+
 m = """Hello sir/ma'am,
 
 I would like to report a Telegram user who is engaging in suspicious and harmful activities. Their username is """+u+""" . I believe they may be involved in scams and phishing attempts, which is causing harm to the community. I would appreciate it if you could look into this matter and take appropriate action.
