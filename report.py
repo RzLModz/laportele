@@ -75,26 +75,9 @@ def generate_nomor_indonesia():
     nomor_lengkap = f"+62{kode_area_terpilih}{nomor_telepon}"
     return nomor_lengkap
 
-def generate_email(name):
-    domains = ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com", "protonmail.com"]
-    tld = [".com", ".net", ".org"]
-    if len(parts) > 1:
-        first_names, last_names = parts[0], parts[-1]
-        possible_names = [first_names, last_names, first_names[0] + last_names, first_names + last_names[0]]
-        names_part = random.choice(possible_names)
-    else:
-        names_part = names
-
-    random_part = ''.join(random.choices(string.ascii_lowercase + string.digits + '_', k=random.randint(2, 4)))
-    domain = random.choice(domains)
-    tld = random.choice(tld)
-    email = f"{names_part}{random_part}@{domain}{tld}"
-    return email
-
 while True:
     num = generate_nomor_indonesia()
-    nama = random.choice(names)
-    email = generate_email(nama)
+    email = f'{random.choice(names)}{randint(9392820,9994958)}@gmail.com'
    
  
     R(m,email,num)
