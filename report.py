@@ -41,7 +41,7 @@ def to(s):
         sys.stdout.flush()
         time.sleep(500.0 / 8000)
 
-my_string =(f"\033[31;mDate >> \033[31;m{west_indo_day} {west_indo_time}\n\033[1;31m DEVELOPER >>\033[1;33m @Overloadserver  \n\033[31;m JOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
+my_string =(f"\033[31;mDate >> \033[31;m{west_indo_day} {west_indo_time}\n\033[1;31mDEVELOPER >>\033[1;33m @Overloadserver  \n\033[31;mJOIN >> \033[1;36m T.ME/POWERPROOFOVERLOAD  \n")
 
 to(my_string)
 def R(m, email, num):
