@@ -27,13 +27,7 @@ hari_id = {
 now = datetime.now(timezone('Asia/Jakarta'))
 west_indo_day = hari_id[now.strftime("%A")]
 west_indo_time = now.strftime("%d %B %Y %H:%M:%S")
-def get_real_time_string():
-    while True:
-        now = datetime.now(timezone('Asia/Jakarta'))
-        west_indo_day = hari_id[now.strftime("%A")]
-        west_indo_time = now.strftime("%d %B %Y %H:%M:%S")
-        yield f"\033[31;mTanggal >> \033[31;m{west_indo_day} {west_indo_time}\n"
-        sleep(1)
+sleep(1)
 E = '\033[1;31m'
 B = '\033[2;36m'
 G = '\033[1;32m'
@@ -52,8 +46,6 @@ Ya_Bs = '\033[1;34m'
 S_aBs = '\033[1;33m'
 ab = pyfiglet.figlet_format("TELEGRAM AUTO REPORT")
 print(a_bSa+ab)
-for message in get_real_time_string():
-    to(message)
 def to(s):
     for char in s + "\n":
         sys.stdout.write(char)
