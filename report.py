@@ -40,10 +40,12 @@ def to(s):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(500.0 / 8000)
-to(s)
-print(f"{RED}Date >> {MAGENTA}{west_indo_day} {west_indo_time}{RESET}\n"
-      f"{RED}DEVELOPER >> {YELLOW}@OverloadServer{RESET}\n"
-      f"{RED}JOIN >> {MAGENTA}T.ME/POWERPROOFOVERLOAD{RESET}")
+
+my_string = f"{RED}Date >> {MAGENTA}{west_indo_day} {west_indo_time}{RESET}\n" \
+            f"{RED}DEVELOPER >> {YELLOW}@OverloadServer{RESET}\n" \
+            f"{RED}JOIN >> {MAGENTA}T.ME/POWERPROOFOVERLOAD{RESET}"
+
+to(my_string)
 def R(m, email, num):
     initial_response = requests.get('https://telegram.org/support', headers={
     "Host": "telegram.org",
