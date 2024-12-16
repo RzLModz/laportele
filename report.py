@@ -40,8 +40,8 @@ def to(s):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(500.0 / 8000)
-
-    print(f"{RED}Date >> {MAGENTA}{west_indo_day} {west_indo_time}{RESET}\n"
+to(s)
+print(f"{RED}Date >> {MAGENTA}{west_indo_day} {west_indo_time}{RESET}\n"
       f"{RED}DEVELOPER >> {YELLOW}@OverloadServer{RESET}\n"
       f"{RED}JOIN >> {MAGENTA}T.ME/POWERPROOFOVERLOAD{RESET}")
 def R(m, email, num):
